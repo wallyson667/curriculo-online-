@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wallsyon F. Alves - Desenvolvedor</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #2c3e50;
+        --text: #333;
+        --text-light: #7f8c8d;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background-color: #f9f9f9;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--secondary);
+        transition: var(--transition);
+      }
+
+      a:hover {
+        color: var(--accent);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+        color: var(--primary);
+        display: inline-block;
+        padding-bottom: 10px;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 3px;
+        background: var(--secondary);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: var(--transition);
+        font-weight: 600;
+      }
+
+      .btn:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+
+      /* HEADER */
+      header {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+      }
+
+      .profile-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        background-color: #fff;
+      }
+
+      .header-content h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+
+      .header-content p {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        opacity: 0.9;
+      }
+
+      .social-links {
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        line-height: 50px;
+        margin: 0 10px;
+        color: white;
+        transition: var(--transition);
+        font-size: 1.2rem;
+      }
+
+      .social-links a:hover {
+        background: white;
+        color: var(--secondary);
+        transform: translateY(-5px);
+      }
+
+      /* PERFIL PROFISSIONAL */
+      #perfil {
+        background: white;
+      }
+
+      .perfil-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .perfil-content p {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 20px;
+        line-height: 1.8;
+      }
+
+      .soft-skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .soft-skill-tag {
+        background: var(--light);
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        color: var(--primary);
+        border: 1px solid #ddd;
+      }
+
+      /* FORMAÇÃO */
+      #formacao {
+        background: var(--light);
+      }
+
+      .formacao-item {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .formacao-item h3 {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .formacao-item h4 {
+        font-size: 1.2rem;
+        color: var(--secondary);
+        margin-bottom: 10px;
+      }
+
+      .formacao-item p {
+        color: var(--text-light);
+        margin-bottom: 5px;
+      }
+
+      .status {
+        display: inline-block;
+        background: #27ae60;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-top: 10px;
+      }
+
+      /* HABILIDADES TÉCNICAS */
+      #habilidades {
+        background: white;
+      }
+
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
+
+      .skill-category {
+        flex: 1;
+        min-width: 300px;
+        max-width: 350px;
+        background: var(--light);
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .skill-category h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #ddd;
+      }
+
+      .skill-item {
+        margin-bottom: 15px;
+      }
+
+      .skill-name {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .skill-bar {
+        height: 8px;
+        background: #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .skill-level {
+        height: 100%;
+        background: var(--secondary);
+        border-radius: 4px;
+      }
+
+      .nivel {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        font-weight: normal;
+      }
+
+      /* PROJETOS E CERTIFICAÇÕES */
+      #projetos {
+        background: var(--light);
+      }
+
+      .projetos-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
+
+      .projeto-item {
+        flex: 1;
+        min-width: 300px;
+        max-width: 350px;
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+
+      .projeto-icon {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 15px;
+      }
+
+      .projeto-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+      }
+
+      .projeto-item p {
+        color: var(--text-light);
+        margin-bottom: 15px;
+      }
+
+      .certificado-badge {
+        display: inline-block;
+        background: var(--secondary);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-top: 10px;
+      }
+
+      /* CONTATO */
+      #contato {
+        background: white;
+        text-align: center;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--secondary);
+      }
+
+      .contact-details h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: var(--primary);
+      }
+
+      /* RODAPÉ */
+      footer {
+        background: var(--dark);
+        color: white;
+        text-align: center;
+        padding: 30px 0;
+      }
+
+      /* RESPONSIVIDADE */
+      @media (max-width: 768px) {
+        .header-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .header-content p {
+          font-size: 1.2rem;
+        }
+
+        .social-links a {
+          width: 45px;
+          height: 45px;
+          line-height: 45px;
+          margin: 0 5px;
+        }
+
+        section {
+          padding: 40px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CABEÇALHO COM DADOS PESSOAIS -->
+    <header>
+      <div class="container">
+        <img
+          src="WhatsApp Image 2025-10-15 at 12.28.22.jpeg"
+          alt="Foto de Wallyson Freitas Alves"
+          class="profile-img"
+        />
+        <div class="header-content">
+          <h1>Wallyson Freitas Alves</h1>
+          <p>Estudante de Engenharia de Software</p>
+          <p>Brasília - Santa Maria/DF</p>
+
+          <div class="social-links">
+            <a
+              href="https://github.com/wallyson667?tab=repositories"
+              target="_blank"
+              title="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SEÇÃO: PERFIL PROFISSIONAL -->
+    <section id="perfil">
+      <div class="container">
+        <div class="section-title">
+          <h2>Perfil Profissional</h2>
+        </div>
+        <div class="perfil-content">
+          <p>
+            Estudante de Engenharia de Software com conhecimentos em programação
+            orientada a objetos. Possuo conhecimento básico para intermediário
+            em Java e conhecimentos básicos em outras tecnologias como SQL,
+            Arduino, HTML, CSS, JavaScript e Angular. Busco oportunidade para
+            aplicar e expandir meus conhecimentos em um ambiente profissional
+            desafiador.
+          </p>
+
+          <div class="soft-skills">
+            <span class="soft-skill-tag">Comunicação</span>
+            <span class="soft-skill-tag">Adaptabilidade</span>
+            <span class="soft-skill-tag">Proatividade</span>
+            <span class="soft-skill-tag">Inteligência Emocional</span>
+            <span class="soft-skill-tag">Aprendizado Rápido</span>
+            <span class="soft-skill-tag">Trabalho Sob Pressão</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: FORMAÇÃO ACADÊMICA -->
+    <section id="formacao">
+      <div class="container">
+        <div class="section-title">
+          <h2>Formação Acadêmica</h2>
+        </div>
+        <div class="formacao-item">
+          <h3>Engenharia de Software</h3>
+          <h4>Graduação</h4>
+          <p><strong>Status:</strong> <span class="status">Cursando</span></p>
+          <p><strong>Tempo de curso:</strong> 4° semestre</p>
+          <p>
+            <strong>Observação:</strong> Participação em projetos integradores
+            obrigatórios do curso
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: HABILIDADES TÉCNICAS -->
+    <section id="habilidades">
+      <div class="container">
+        <div class="section-title">
+          <h2>Habilidades Técnicas</h2>
+        </div>
+        <div class="skills-container">
+          <!-- JAVA - BÁSICO A INTERMEDIÁRIO -->
+          <div class="skill-category">
+            <h3>Conhecimento Básico a Intermediário</h3>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Java</span>
+                <span class="nivel">Básico a Intermediário</span>
+              </div>
+              <div class="skill-bar">
+                <!-- 65% representa básico para intermediário -->
+                <div class="skill-level" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DEMAIS TECNOLOGIAS - BÁSICO -->
+          <div class="skill-category">
+            <h3>Conhecimento Básico</h3>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>SQL</span>
+                <span class="nivel">Básico</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 40%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>HTML/CSS/JavaScript</span>
+                <span class="nivel">Básico</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 35%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Angular</span>
+                <span class="nivel">Básico</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 45%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Python</span>
+                <span class="nivel">Básico</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 20%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>C++ / Arduino</span>
+                <span class="nivel">Básico</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 30%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Linguagem C</span>
+                <span class="nivel">Básico</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 25%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: PROJETOS E CERTIFICAÇÕES -->
+    <section id="projetos">
+      <div class="container">
+        <div class="section-title">
+          <h2>Projetos e Certificações</h2>
+        </div>
+        <div class="projetos-container">
+          <div class="projeto-item">
+            <div class="projeto-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3>Certificação Angular</h3>
+            <p>Certificado de 30 horas em Angular</p>
+            <span class="certificado-badge">30 horas</span>
+          </div>
+
+          <div class="projeto-item">
+            <div class="projeto-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Projetos Integradores</h3>
+            <p>
+              Participação em projetos acadêmicos obrigatórios do curso de
+              Engenharia de Software
+            </p>
+          </div>
+
+          <div class="projeto-item">
+            <div class="projeto-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <h3>Portfólio GitHub</h3>
+            <p>
+              Repositórios com projetos em diversas tecnologias e linguagens de
+              programação
+            </p>
+            <a
+              href="https://github.com/wallyson667?tab=repositories"
+              target="_blank"
+              class="btn"
+              >Ver Repositórios</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: CONTATO -->
+    <section id="contato">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contato</h2>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="contact-details">
+              <h3>GitHub</h3>
+              <p>github.com/wallyson667</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Localização</h3>
+              <p>Brasília - Santa Maria/DF</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Disponibilidade</h3>
+              <p>Em busca de oportunidades</p>
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://github.com/wallyson667?tab=repositories"
+          target="_blank"
+          class="btn"
+          >Ver Portfólio no GitHub</a
+        >
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Wallyson Freitas Alves. Todos os direitos reservados.</p>
+        <p>Desenvolvido com HTML, CSS e JavaScript</p>
+      </div>
+    </footer>
+  </body>
+</html>
