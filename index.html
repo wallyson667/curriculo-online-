@@ -224,7 +224,7 @@
         margin-top: 10px;
       }
 
-      /* HABILIDADES TÉCNICAS */
+      /* HABILIDADES TÉCNICAS (NOVO DESIGN CLEAN) */
       #habilidades {
         background: white;
       }
@@ -239,15 +239,15 @@
       .skill-category {
         flex: 1;
         min-width: 300px;
-        max-width: 350px;
+        max-width: 480px;
         background: var(--light);
-        padding: 25px;
+        padding: 30px;
         border-radius: 8px;
         box-shadow: var(--shadow);
       }
 
       .skill-category h3 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-bottom: 20px;
         color: var(--primary);
         text-align: center;
@@ -255,34 +255,39 @@
         border-bottom: 2px solid #ddd;
       }
 
-      .skill-item {
-        margin-bottom: 15px;
+      .skill-tags-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
       }
 
-      .skill-name {
+      .skill-card {
+        background: white;
+        padding: 12px 16px;
+        border-radius: 6px;
+        border-left: 4px solid var(--secondary);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 8px;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .skill-card.highlight {
+        border-left: 4px solid #27ae60;
+        background: #f4fbf7;
+      }
+
+      .skill-card-title {
         font-weight: 600;
+        color: var(--primary);
+        font-size: 0.95rem;
       }
 
-      .skill-bar {
-        height: 8px;
-        background: #e0e0e0;
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      .skill-level {
-        height: 100%;
-        background: var(--secondary);
-        border-radius: 4px;
-      }
-
-      .nivel {
-        font-size: 0.8rem;
+      .skill-card-badge {
+        font-size: 0.75rem;
         color: var(--text-light);
-        font-weight: normal;
+        margin-top: 3px;
+        font-weight: 500;
       }
 
       /* PROJETOS E CERTIFICAÇÕES */
@@ -474,99 +479,55 @@
       </div>
     </section>
 
-    <!-- SEÇÃO: HABILIDADES TÉCNICAS -->
+    <!-- SEÇÃO: HABILIDADES TÉCNICAS (NOVO FORMATO SOBERANO E PROFISSIONAL) -->
     <section id="habilidades">
       <div class="container">
         <div class="section-title">
           <h2>Habilidades Técnicas</h2>
         </div>
         <div class="skills-container">
-          <!-- FOCO PRINCIPAL -->
+          <!-- BACKEND & BANCO DE DADOS -->
           <div class="skill-category">
             <h3>Backend & Banco de Dados</h3>
-
-            <div class="skill-item">
-              <div class="skill-name">
-                <span>Java / POO</span>
-                <span class="nivel">Intermediário</span>
+            <div class="skill-tags-grid">
+              <div class="skill-card highlight">
+                <span class="skill-card-title">Java / POO</span>
+                <span class="skill-card-badge">Intermediário</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 70%"></div>
+              <div class="skill-card">
+                <span class="skill-card-title">SQL / Banco de Dados</span>
+                <span class="skill-card-badge">Básico</span>
               </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name">
-                <span>SQL / Banco de Dados</span>
-                <span class="nivel">Intermediário</span>
+              <div class="skill-card">
+                <span class="skill-card-title">PHP</span>
+                <span class="skill-card-badge">Básico</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 60%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name">
-                <span>PHP</span>
-                <span class="nivel">Intermediário</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 55%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name">
-                <span>Testes de API (Postman)</span>
-                <span class="nivel">Prático</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 60%"></div>
+              <div class="skill-card">
+                <span class="skill-card-title">Testes de API (Postman)</span>
+                <span class="skill-card-badge">Prático</span>
               </div>
             </div>
           </div>
 
-          <!-- FERRAMENTAS E OUTRAS LINGUAGENS -->
+          <!-- FERRAMENTAS & FRONTEND -->
           <div class="skill-category">
             <h3>Ferramentas & Frontend</h3>
-
-            <div class="skill-item">
-              <div class="skill-name">
-                <span>Git / GitHub</span>
-                <span class="nivel">Prático</span>
+            <div class="skill-tags-grid">
+              <div class="skill-card">
+                <span class="skill-card-title">Git / GitHub</span>
+                <span class="skill-card-badge">Prático</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 65%"></div>
+              <div class="skill-card">
+                <span class="skill-card-title">IntelliJ IDEA / VS Code</span>
+                <span class="skill-card-badge">Prático</span>
               </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name">
-                <span>IntelliJ IDEA / VS Code</span>
-                <span class="nivel">Prático</span>
+              <div class="skill-card">
+                <span class="skill-card-title">Angular / TypeScript</span>
+                <span class="skill-card-badge">Básico</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 75%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name">
-                <span>Angular / TypeScript</span>
-                <span class="nivel">Básico</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 45%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <div class="skill-name">
-                <span>HTML / CSS / JS</span>
-                <span class="nivel">Básico</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-level" style="width: 50%"></div>
+              <div class="skill-card">
+                <span class="skill-card-title">HTML / CSS / JS</span>
+                <span class="skill-card-badge">Básico</span>
               </div>
             </div>
           </div>
