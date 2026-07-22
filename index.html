@@ -224,7 +224,7 @@
         margin-top: 10px;
       }
 
-      /* HABILIDADES TÉCNICAS (NOVO DESIGN CLEAN) */
+      /* HABILIDADES TÉCNICAS (DESIGN SEM BARRAS DE VOLUME) */
       #habilidades {
         background: white;
       }
@@ -240,10 +240,11 @@
         flex: 1;
         min-width: 300px;
         max-width: 480px;
-        background: var(--light);
+        background: #f8fafc;
         padding: 30px;
-        border-radius: 8px;
+        border-radius: 10px;
         box-shadow: var(--shadow);
+        border: 1px solid #e2e8f0;
       }
 
       .skill-category h3 {
@@ -252,42 +253,70 @@
         color: var(--primary);
         text-align: center;
         padding-bottom: 10px;
-        border-bottom: 2px solid #ddd;
+        border-bottom: 2px solid #cbd5e1;
       }
 
-      .skill-tags-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      .skill-cards-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .skill-card-item {
+        background: white;
+        padding: 14px 18px;
+        border-radius: 8px;
+        border-left: 5px solid var(--secondary);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: var(--transition);
+      }
+
+      .skill-card-item:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .skill-card-item.highlight {
+        border-left: 5px solid #27ae60;
+        background: #f0fdf4;
+      }
+
+      .skill-info {
+        display: flex;
+        align-items: center;
         gap: 12px;
       }
 
-      .skill-card {
-        background: white;
-        padding: 12px 16px;
-        border-radius: 6px;
-        border-left: 4px solid var(--secondary);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      .skill-info i {
+        font-size: 1.2rem;
+        color: var(--secondary);
       }
 
-      .skill-card.highlight {
-        border-left: 4px solid #27ae60;
-        background: #f4fbf7;
+      .skill-card-item.highlight .skill-info i {
+        color: #27ae60;
       }
 
-      .skill-card-title {
+      .skill-title {
         font-weight: 600;
         color: var(--primary);
-        font-size: 0.95rem;
+        font-size: 0.98rem;
       }
 
-      .skill-card-badge {
-        font-size: 0.75rem;
-        color: var(--text-light);
-        margin-top: 3px;
-        font-weight: 500;
+      .skill-badge {
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 12px;
+        background: #e2e8f0;
+        color: #475569;
+      }
+
+      .skill-card-item.highlight .skill-badge {
+        background: #dcfce7;
+        color: #166534;
       }
 
       /* PROJETOS E CERTIFICAÇÕES */
@@ -444,7 +473,7 @@
         </div>
         <div class="perfil-content">
           <p>
-            Estudante de Engenharia de Software em busca de oportunidade de Estágio em Desenvolvimento de Software / TI. Profissional com rápida curva de aprendizado, forte raciocínio lógico e dedicação constante ao estudo autônomo. Busco aplicar minhas competências técnicas na prática, com foco em desenvolvimento Java, PHP, banco de dados e testes de APIs com Postman.
+            Estudante de Engenharia de Software em busca de oportunidade de Estágio em Desenvolvimento de Software / TI. Profissional com rápida curva de aprendizado, forte raciocínio lógico e dedicação constante ao estudo autônomo. Busco aplicar minhas competências técnicas na prática, com foco em desenvolvimento Java, banco de dados e testes de APIs com Postman.
           </p>
 
           <div class="soft-skills">
@@ -479,7 +508,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO: HABILIDADES TÉCNICAS (NOVO FORMATO SOBERANO E PROFISSIONAL) -->
+    <!-- SEÇÃO: HABILIDADES TÉCNICAS (CLEAN, MODERNO E SEM BARRAS) -->
     <section id="habilidades">
       <div class="container">
         <div class="section-title">
@@ -489,22 +518,29 @@
           <!-- BACKEND & BANCO DE DADOS -->
           <div class="skill-category">
             <h3>Backend & Banco de Dados</h3>
-            <div class="skill-tags-grid">
-              <div class="skill-card highlight">
-                <span class="skill-card-title">Java / POO</span>
-                <span class="skill-card-badge">Intermediário</span>
+            <div class="skill-cards-grid">
+              <div class="skill-card-item highlight">
+                <div class="skill-info">
+                  <i class="fab fa-java"></i>
+                  <span class="skill-title">Java / POO</span>
+                </div>
+                <span class="skill-badge">Intermediário</span>
               </div>
-              <div class="skill-card">
-                <span class="skill-card-title">SQL / Banco de Dados</span>
-                <span class="skill-card-badge">Básico</span>
+
+              <div class="skill-card-item">
+                <div class="skill-info">
+                  <i class="fas fa-database"></i>
+                  <span class="skill-title">SQL / Banco de Dados</span>
+                </div>
+                <span class="skill-badge">Básico</span>
               </div>
-              <div class="skill-card">
-                <span class="skill-card-title">PHP</span>
-                <span class="skill-card-badge">Básico</span>
-              </div>
-              <div class="skill-card">
-                <span class="skill-card-title">Testes de API (Postman)</span>
-                <span class="skill-card-badge">Prático</span>
+
+              <div class="skill-card-item">
+                <div class="skill-info">
+                  <i class="fas fa-vial"></i>
+                  <span class="skill-title">Testes de API (Postman)</span>
+                </div>
+                <span class="skill-badge">Prático</span>
               </div>
             </div>
           </div>
@@ -512,22 +548,29 @@
           <!-- FERRAMENTAS & FRONTEND -->
           <div class="skill-category">
             <h3>Ferramentas & Frontend</h3>
-            <div class="skill-tags-grid">
-              <div class="skill-card">
-                <span class="skill-card-title">Git / GitHub</span>
-                <span class="skill-card-badge">Prático</span>
+            <div class="skill-cards-grid">
+              <div class="skill-card-item">
+                <div class="skill-info">
+                  <i class="fab fa-git-alt"></i>
+                  <span class="skill-title">Git / GitHub</span>
+                </div>
+                <span class="skill-badge">Prático</span>
               </div>
-              <div class="skill-card">
-                <span class="skill-card-title">IntelliJ IDEA / VS Code</span>
-                <span class="skill-card-badge">Prático</span>
+
+              <div class="skill-card-item">
+                <div class="skill-info">
+                  <i class="fas fa-code"></i>
+                  <span class="skill-title">IntelliJ IDEA / VS Code</span>
+                </div>
+                <span class="skill-badge">Prático</span>
               </div>
-              <div class="skill-card">
-                <span class="skill-card-title">Angular / TypeScript</span>
-                <span class="skill-card-badge">Básico</span>
-              </div>
-              <div class="skill-card">
-                <span class="skill-card-title">HTML / CSS / JS</span>
-                <span class="skill-card-badge">Básico</span>
+
+              <div class="skill-card-item">
+                <div class="skill-info">
+                  <i class="fab fa-angular"></i>
+                  <span class="skill-title">Angular / TypeScript</span>
+                </div>
+                <span class="skill-badge">Básico</span>
               </div>
             </div>
           </div>
@@ -548,7 +591,7 @@
             </div>
             <h3>Projeto ImobiHub</h3>
             <p>
-              Plataforma web imobiliária desenvolvida em PHP e SQL Server/XAMPP para regras de negócio e gestão de dados, com versionamento via GitHub.
+              Plataforma web imobiliária desenvolvida para regras de negócio e gestão de dados, com versionamento via GitHub.
             </p>
           </div>
 
